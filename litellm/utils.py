@@ -7885,9 +7885,8 @@ def get_secret(
                         encrypted_secret = base64.b64decode(encrypted_secret)
                     if not isinstance(encrypted_secret, bytes):
                         # If it's not, assume it's a string and encode it to bytes
-                        ciphertext = eval(
-                            encrypted_secret.encode()
-                        )  # assuming encrypted_secret is something like - b'\n$\x00D\xac\xb4/t)07\xe5\xf6..'
+                        ciphertext = encrypted_secret.encode()
+                        # assuming encrypted_secret is something like - b'\n$\x00D\xac\xb4/t)07\xe5\xf6..'
                     else:
                         ciphertext = encrypted_secret
 
